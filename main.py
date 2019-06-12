@@ -1,10 +1,12 @@
 ################ IMPORT LIBRARY ##################
 import tensorflow as tf
 import numpy as np
+#import visualize as viz
 
 import NeuralNetwork as NN
 import IVFData as IVFD
 import Metrics as MT
+
 ########## ERROR FIXED WITH THIS ##########
 config = tf.ConfigProto()
 config.gpu_options.allow_growth = True
@@ -67,6 +69,10 @@ def test_run(fold):
     ################ Predict & Save ##################
     cm = nn.predict(x_test_set, y_test_set)
     nn.save_graph_and_parameters(fold)
+
+
+    #for i in range(x_test_set.shape[0]):
+    #     viz.visualize_cam_average_pooling(nn.model, x_test_set[i,:,:,:],  'activation_9', i, y_test_set[i])
 
     return cm
 
