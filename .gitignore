@@ -6,4 +6,6 @@
 # file types
 *.xlsx
 *.7z
+*.png
+*.h5
 visualize.py

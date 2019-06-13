@@ -16,9 +16,9 @@ session = tf.Session(config=config)
 hyperparameters = {
     "batch_size"        : 32,
     "learning_rate"     : 0.0001,
-    "epochs"            : 1,
-    "img_wid"           : 32,
-    "img_hgt"           : 32,
+    "epochs"            : 500,
+    "img_wid"           : 320,
+    "img_hgt"           : 320,
     "num_of_classes"    : 2,
     "classes"           : ['No Pregnancy','Pregnancy'],
     "model_to_train"    : 'Residual-Attention', # 'ConvNet', 'Concate-Attention', 'Residual-Attention'
@@ -72,7 +72,7 @@ def test_run(fold):
 
 
     #for i in range(x_test_set.shape[0]):
-    #     viz.visualize_cam_average_pooling(nn.model, x_test_set[i,:,:,:],  'activation_9', i, y_test_set[i])
+    #     viz.visualize_cam_average_pooling(nn.model, x_test_set[i,:,:,:],  'add_4', i, y_test_set[i])
 
     return cm
 
